@@ -1,0 +1,294 @@
+
+
+/* src/HomePage.css */
+
+
+
+.scroll-container {
+ overflow-x: hidden;
+ position: relative;
+ width: 100%;
+}
+
+/* Enhanced styles for containers with both auto-scroll and manual buttons */
+.scroll-container-with-buttons {
+ overflow-x: hidden; /* Keep hidden for auto-scroll animation */
+ position: relative;
+ width: 100%;
+ padding: 0 60px; /* Space for buttons */
+}
+
+/* Allow manual scrolling but keep scrollbars hidden */
+.scroll-container-manual-active {
+ overflow-x: auto;
+ scrollbar-width: none; /* Firefox */
+ -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scroll-container-manual-active::-webkit-scrollbar {
+ display: none; /* Safari and Chrome */
+}
+
+/* Pause animation when manually scrolling */
+.scroll-content-paused {
+ animation-play-state: paused;
+}
+
+.scroll-content {
+ display: flex;
+ width: max-content;
+}
+
+
+
+/* Scroll button styles */
+.scroll-button {
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 20;
+ background-color: #16a34a; /* green-600 */
+ color: white;
+ border: none;
+ border-radius: 50%;
+ padding: 12px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ transition: all 0.2s ease-in-out;
+ cursor: pointer;
+ opacity: 0.85;
+}
+
+.scroll-button:hover {
+ background-color: #15803d; /* green-700 */
+ transform: translateY(-50%) scale(1.1);
+ opacity: 1;
+ box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-button:active {
+ transform: translateY(-50%) scale(0.95);
+ opacity: 0.9;
+}
+
+/* Show buttons more prominently on container hover */
+.relative:hover .scroll-button {
+ opacity: 1;
+}
+
+.scroll-button-left {
+ left: 8px;
+}
+
+.scroll-button-right {
+ right: 8px;
+}
+
+/* Mobile responsiveness for scroll buttons */
+@media (max-width: 640px) {
+ .scroll-container-with-buttons {
+   padding: 0 50px;
+ }
+ 
+ .scroll-button {
+   padding: 8px;
+ }
+ 
+ .scroll-button-left {
+   left: 4px;
+ }
+ 
+ .scroll-button-right {
+   right: 4px;
+ }
+}
+
+
+.scroll-animation-left {
+ --scroll-duration: 60s;
+ animation: scrollLeft var(--scroll-duration) linear infinite;
+ transition: animation-duration 0.5s ease-in-out, animation-name 0.3s ease-in-out;
+}
+
+.scroll-animation-right {
+ --scroll-duration: 60s;
+ animation: scrollRight var(--scroll-duration) linear infinite;
+ transition: animation-duration 0.5s ease-in-out, animation-name 0.3s ease-in-out;
+}
+
+
+/* Keyframes for the scrolling animation */
+@keyframes scrollLeft {
+ from {
+   transform: translateX(0%);
+ }
+ to {
+   transform: translateX(-50%);
+ }
+}
+
+
+@keyframes scrollRight {
+ from {
+   transform: translateX(-50%);
+ }
+ to {
+   transform: translateX(0%);
+ }
+}
+
+
+/* This is a helper to make sure the content loops seamlessly */
+.scroll-content::after,
+.scroll-content::before {
+ content: " ";
+ display: flex;
+}
+
+/* --- Dynamic Search Bar Styles (New) --- */
+.search-animation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.search-form {
+  max-width: 600px;
+  width: 100%;
+  
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  /* REMOVE these two lines: */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  color: #a0aec0;
+}
+
+.logo-section {
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+.filter-tags-section {
+  width: 100%;
+  margin-top: 1rem; /* Adjust spacing as needed */
+  text-align: left; /* Aligns the text to the left */
+}
+
+.filter-tags-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568; /* Or a specific green color to match your design */
+  margin-bottom: 0.5rem;
+}
+
+.filter-tags-line {
+  width: 100%;
+  height: 2px;
+  background-color: #38a169; /* Use a green that matches your theme */
+  /* You can add a subtle animation or transition here if you like */
+}
+
+
+
+
+
+.tags-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  width: 100%;
+  background-color: white;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.tags-category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Focused state */
+.search-animation-container.focused {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-animation-container.focused .logo-section {
+  flex-shrink: 0; /* Prevents the logo from shrinking */
+  transform: translateX(-70px); /* Adjust this value to move the logo further left */
+}
+
+
+/* --- Add this entire block to your HomePage.css --- */
+
+/* This styles the main search bar container when it is focused */
+.search-animation-container.focused .search-form {
+  /* This is the key: it stacks the input and filter section vertically */
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  
+  /* Adds padding to the container itself to make space */
+  padding: 2rem; 
+  
+  /* Creates the outer line you want to see */
+  border: 1px solid #38a169; 
+  border-radius: 4rem;
+  
+  /* Ensures it takes up all available space */
+  flex-grow: 1;
+  max-width: 100%;
+  
+  /* Prevents the bar from scaling and causing layout shifts */
+  transform: scale(1);
+}
+
+/* This resets the default padding on the input field when focused */
+.search-animation-container.focused .search-form input {
+  padding: 1rem 1rem 1rem 4rem; /* Use reasonable padding */
+  background-color: transparent; 
+  border: none; /* Hides the input's own border */
+}
+
+/* This positions the magnifying glass icon correctly inside the new container */
+.search-animation-container.focused .search-form .absolute {
+  top: 3.8rem; 
+  left: 4rem;
+  transform: translateY(-50%);
+}
+
+
+
+.tags-category {
+  margin-top: 1rem;
+}
+
+.tags-category-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #718096; /* A slightly lighter grey */
+  margin-bottom: 0.5rem;
+}
