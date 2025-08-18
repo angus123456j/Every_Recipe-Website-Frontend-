@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:2356/albums';
+const API_BASE = 'https://every-recipe-website-backend.onrender.com/albums';
 
 // Create a new album
 export const createAlbum = async (albumData) => {

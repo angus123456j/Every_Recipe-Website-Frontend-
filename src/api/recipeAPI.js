@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:2356/recipes';
+const API_BASE = 'https://every-recipe-website-backend.onrender.com/recipes';
 
 export const getAllRecipes = async () => {
     try{

@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:2356/auth';
+const API_BASE = 'https://every-recipe-website-backend.onrender.com/auth';
 
 // Sign up a new user
 export const signUp = async (userData) => {
