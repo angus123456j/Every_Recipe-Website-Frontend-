@@ -292,3 +292,29 @@
   color: #718096; /* A slightly lighter grey */
   margin-bottom: 0.5rem;
 }
+
+/* --- Mobile fixes for search area --- */
+@media (max-width: 640px) {
+  .search-animation-container {
+    padding: 0 1rem;
+  }
+  .search-animation-container.focused {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .search-animation-container.focused .logo-section {
+    transform: none;
+    align-self: center;
+  }
+  .search-animation-container.focused .search-form {
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+    border-radius: 1.5rem;
+  }
+  .search-animation-container.focused .search-form .absolute {
+    position: absolute;
+    top: 2.1rem;
+    left: 1.25rem;
+    transform: translateY(-50%);
+  }
+}

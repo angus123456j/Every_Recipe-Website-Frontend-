@@ -378,9 +378,9 @@ return (
           <div className={`search-animation-container ${isSearchFocused ? 'focused' : ''}`}
             ref={searchRef}>
             {/* Logo Section */}
-            <div className="flex items-center space-x-4 logo-section mb-5">
-              <img src={logo} alt="Every Recipe Logo" className="h-12" />
-              <h2 className="text-5xl font-extrabold text-green-700">Every_Recipe</h2>
+            <div className="flex items-center space-x-3 sm:space-x-4 logo-section mb-5">
+              <img src={logo} alt="Every Recipe Logo" className="h-10 sm:h-12" />
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-green-700">Every_Recipe</h2>
             </div>
 
             {/* Search Form */}
@@ -391,7 +391,7 @@ return (
               <input
                 type="text"
                 placeholder="Search up recipes"
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-full
+                className="w-full pl-10 pr-3 py-2 sm:pl-12 sm:pr-4 sm:py-3 border border-gray-300 rounded-full
                   focus:outline-none focus:border-green-500
                   hover:outline outline-1 outline-green-500 hover:outline-green-500"
                 value={searchQuery}
@@ -458,8 +458,8 @@ return (
                 </div>
               )}
 
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-grey-400">
-                <img src={search} alt="magnifying glass logo" className="h-4" />
+              <span className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-grey-400">
+                <img src={search} alt="magnifying glass logo" className="h-3 sm:h-4" />
               </span>
             </form>
 

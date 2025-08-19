@@ -105,12 +105,12 @@ function RecipePage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <Header />
-      <div className="container mx-auto p-8">
-        <div className="bg-white p-8 rounded-lg shadow-xl">
+      <div className="container mx-auto px-4 sm:p-8">
+        <div className="bg-white p-4 sm:p-8 rounded-lg shadow-xl">
           {/* Main Content */}
           <div>
-            {/* Image floated to the right */}
-            <div className="float-right ml-8 mb-8 w-1/2">
+            {/* Image area - stacks on mobile, floats on larger screens */}
+            <div className="w-full mb-6 md:float-right md:ml-8 md:mb-8 md:w-1/2">
               <div className="aspect-w-16 aspect-h-15 rounded-lg overflow-hidden shadow-lg">
                 <img
                   src={recipe.imageURL || 'https://via.placeholder.com/400x300?text=No+Image'}
@@ -123,8 +123,8 @@ function RecipePage() {
               </div>
             </div>
 
-            <h1 className="text-4xl font-bold mb-2">{recipe.title}</h1>
-            <div className="flex items-center gap-4 mb-6">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-2 break-words">{recipe.title}</h1>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-6">
               <p className="text-gray-600 font-semibold">{recipe.userId} | {formatTime(recipe.time)}</p>
               
               {/* Save button - only show for authenticated users */}
@@ -144,7 +144,7 @@ function RecipePage() {
               
               {/* Edit and Delete buttons - only show for recipe owner */}
               {user && recipe.userId === user.username && (
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Link
                     to={`/edit-recipe/${recipe._id}`}
                     className="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors focus:outline-none"

@@ -25,17 +25,17 @@ function Header() {
       {/* Left side - Logo */}
       <Link to="/">
         <div className="flex items-center space-x-2 cursor-pointer transition-transform hover:scale-105">
-          <img src={logo} alt="Every Recipe Logo" className="h-10" />
-          <h1 className="text-2xl font-bold text-green-700">Every_Recipe</h1>
+          <img src={logo} alt="Every Recipe Logo" className="h-8 sm:h-10" />
+          <h1 className="text-xl sm:text-2xl font-bold text-green-700">Every_Recipe</h1>
         </div>
       </Link>
 
       {/* Right side - Navigation buttons and Auth section */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0">
         {!user && (
           <Link
             to="/perks"
-            className="px-3 py-1.5 rounded-full border border-green-600 text-green-700 hover:bg-green-50 transition-colors duration-200"
+            className="px-2 py-1 text-sm sm:px-3 sm:py-1.5 rounded-full border border-green-600 text-green-700 hover:bg-green-50 transition-colors duration-200"
           >
             <span className="inline-flex items-center gap-1.5">
               <SparklesIcon className="h-4 w-4 text-yellow-500" />
@@ -45,14 +45,14 @@ function Header() {
         )}
         {user && (
           <>
-            <Link to="/my-recipes" className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 shadow-sm hover:shadow-md hover:shadow-green-300 transition-shadow duration-200 hover:scale-105" >
+            <Link to="/my-recipes" className="flex items-center space-x-2 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 shadow-sm hover:shadow-md hover:shadow-green-300 transition-shadow duration-200 hover:scale-105" >
               <span className="text-lg"><img src={pen} alt="pen logo" className="h-6" /></span>
-              <span className="font-bold">Add my recipe</span>
+              <span className="font-bold hidden sm:inline">Add my recipe</span>
             </Link>
 
-            <Link to="/saved-recipes" className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 shadow-sm hover:shadow-md hover:shadow-green-300 transition-shadow duration-200 hover:scale-105">
+            <Link to="/saved-recipes" className="flex items-center space-x-2 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 shadow-sm hover:shadow-md hover:shadow-green-300 transition-shadow duration-200 hover:scale-105">
               <span className="text-lg"><img src={heart2} alt="heart logo" className="h-6" /></span>
-              <span className='font-bold'>Saved Collection</span>
+              <span className='font-bold hidden sm:inline'>Saved Collection</span>
             </Link>
           </>
         )}
@@ -62,7 +62,7 @@ function Header() {
             <div className="flex items-center space-x-4">
               {/* Username Display */}
               <span 
-                className="text-green-700 font-semibold max-w-40 truncate"
+                className="text-green-700 font-semibold max-w-40 truncate hidden md:inline"
                 title={`Hi, ${user.username}`}
               >
                 Hi, {user.username}
@@ -77,7 +77,7 @@ function Header() {
             </div>
           ) : (
             <>
-              <Link to="/signin" className="px-4 py-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200 shadow-sm hover:shadow-md">
+              <Link to="/signin" className="hidden sm:inline-block px-4 py-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200 shadow-sm hover:shadow-md">
                 Sign up / Login
               </Link>
               <Link to="/signin">
