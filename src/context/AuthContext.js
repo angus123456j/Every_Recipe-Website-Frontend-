@@ -65,6 +65,7 @@ export const AuthProvider = ({ children }) => {
             
             // Update user state after successful login
             await checkAuth();
+            console.log("user is:", user);
             
             return result;
         } catch (err) {
