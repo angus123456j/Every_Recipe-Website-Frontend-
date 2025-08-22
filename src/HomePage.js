@@ -311,6 +311,11 @@ const controlAnimation = (scrollRef, direction, setIsSpeedBoost) => {
   const rowKey = isTopRow ? 'row1' : 'row2';
   const state = animationState.current[rowKey];
   
+  // Prevent spam clicking - ignore if already in progress
+  if (state.timeouts.length > 0) {
+    return;
+  }
+  
   // Clear any existing timeouts to prevent conflicts
   state.timeouts.forEach(timeout => clearTimeout(timeout));
   state.timeouts = [];
@@ -329,6 +334,8 @@ const controlAnimation = (scrollRef, direction, setIsSpeedBoost) => {
     const timeout2 = setTimeout(() => {
       state.speed = 0.3;
       setIsSpeedBoost(false);
+      // Clear timeouts array when animation is complete
+      state.timeouts = [];
     }, 1600);
     
     state.timeouts = [timeout1, timeout2];
@@ -347,6 +354,8 @@ const controlAnimation = (scrollRef, direction, setIsSpeedBoost) => {
     const timeout2 = setTimeout(() => {
       state.speed = 0.3;
       setIsSpeedBoost(false);
+      // Clear timeouts array when animation is complete
+      state.timeouts = [];
     }, 2000);
     
     state.timeouts = [timeout1, timeout2];
