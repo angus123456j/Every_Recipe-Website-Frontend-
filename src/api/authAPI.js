@@ -1,4 +1,4 @@
-const API_BASE = 'https://every-recipe-website-backend.onrender.com/auth';
+const API_BASE = 'https://every-recipe-53da6eac62e6.herokuapp.com/auth';
 
 // Sign up a new user
 export const signUp = async (userData) => {

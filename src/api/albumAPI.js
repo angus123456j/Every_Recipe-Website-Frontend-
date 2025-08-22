@@ -1,4 +1,4 @@
-const API_BASE = 'https://every-recipe-website-backend.onrender.com/albums';
+const API_BASE = 'https://every-recipe-53da6eac62e6.herokuapp.com/albums';
 
 // Create a new album
 export const createAlbum = async (albumData) => {

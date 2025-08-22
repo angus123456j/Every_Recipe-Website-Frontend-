@@ -1,4 +1,4 @@
-const API_BASE = 'https://every-recipe-website-backend.onrender.com/recipes';
+const API_BASE = 'https://every-recipe-53da6eac62e6.herokuapp.com/recipes';
 
 export const getAllRecipes = async () => {
     try{
