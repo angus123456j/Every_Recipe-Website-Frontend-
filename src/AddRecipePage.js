@@ -152,7 +152,7 @@ function AddRecipePage() {
         navigate(`/recipe/${data._id || recipeId}`);
       } else {
         // For new recipes, we need to handle the response
-        const response = await fetch("http://localhost:2356/recipes",{
+        const response = await fetch("https://every-recipe-53da6eac62e6.herokuapp.com/recipes",{
           method: "POST",
           body: formData,
           credentials: 'include',
