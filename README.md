@@ -94,4 +94,4 @@ The application is fully responsive with special optimizations for mobile device
 
 ---
 
-Built with ❤️ using React and Tailwind CSS
+Built using React and Tailwind CSS
