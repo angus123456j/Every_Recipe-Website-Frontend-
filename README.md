@@ -1,20 +1,20 @@
-# Every_Recipe 🍳
+# Every_Recipe 
 
 A modern, responsive recipe sharing platform where users can discover, save, and share their favorite recipes with an intuitive and beautiful interface.
 
-## ✨ Features
+## Features
 
-- **🔍 Smart Search** - Find recipes by name, tags, or cooking time with real-time filtering
-- **👤 User Authentication** - Secure sign up, login, and user management
-- **📱 Fully Responsive** - Optimized for mobile, tablet, and desktop devices
-- **💾 Recipe Collections** - Create custom albums to organize your favorite recipes
-- **✍️ Recipe Management** - Add, edit, and delete your own recipes
-- **🏷️ Tag System** - Categorize recipes with cuisine types, dietary preferences, and cooking methods
-- **⏱️ Time Filtering** - Filter recipes by cooking duration (Quick, Fast, Medium, Long)
-- **🎨 Beautiful UI** - Clean, modern design with smooth animations and transitions
-- **🔄 Auto-Scrolling Cards** - Interactive recipe carousels with manual speed controls
+- ** Smart Search** - Find recipes by name, tags, or cooking time with real-time filtering
+- ** User Authentication** - Secure sign up, login, and user management
+- ** Fully Responsive** - Optimized for mobile, tablet, and desktop devices
+- ** Recipe Collections** - Create custom albums to organize your favorite recipes
+- ** Recipe Management** - Add, edit, and delete your own recipes
+- ** Tag System** - Categorize recipes with cuisine types, dietary preferences, and cooking methods
+- ** Time Filtering** - Filter recipes by cooking duration (Quick, Fast, Medium, Long)
+- ** Beautiful UI** - Clean, modern design with smooth animations and transitions
+- ** Auto-Scrolling Cards** - Interactive recipe carousels with manual speed controls
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend:**
 - React 19.1.0
@@ -33,7 +33,7 @@ A modern, responsive recipe sharing platform where users can discover, save, and
 - `@heroicons/react` - Beautiful SVG icons
 - `react-router-dom` - Client-side routing
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 - Node.js (version 14 or higher)
@@ -75,7 +75,7 @@ Make sure your backend API is running and accessible. The frontend expects the b
 - Album management
 - Search functionality
 
-## 📱 Mobile Optimization
+## Mobile Optimization
 
 The application is fully responsive with special optimizations for mobile devices:
 - Collapsible navigation with icon-only buttons
@@ -83,7 +83,7 @@ The application is fully responsive with special optimizations for mobile device
 - Touch-friendly search and filter controls
 - Optimized typography and spacing
 
-## 🎯 Key Components
+## Key Components
 
 - **Header** - Responsive navigation with user authentication
 - **HomePage** - Main landing page with search and recipe carousels
